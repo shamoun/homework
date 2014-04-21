@@ -1,0 +1,13 @@
+<h1>list</h1>
+
+<ul>
+  <% all_books = Books.read %>
+
+  <% all_books.each do |books| %>
+  <li>
+    <%= books["title"] %>
+    <%= books["author"] %>
+   </li>
+   <% end %>
+</ul>
+
