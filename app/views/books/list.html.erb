@@ -2,11 +2,18 @@
 <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
 
 <h2> <font color=purple> Let's get reading! </font> </h2>
-
+<table>
+<style>
+table,th,td
+{
+border:1px solid #C0C0C0;
+border-collapse:collapse
+}
+</style>
+<table style="width:600px">
 
 <% all_books = Book.read %>
-<div class="col-md-5">
-<table class="table table-bordered">
+
   <thead>
   <tr>
     <th> Title </th>
