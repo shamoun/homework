@@ -1,5 +1,5 @@
 
-<h2> <font face="verdana" color=purple> Let's get reading! </font> </h2>
+<h2> <font face="verdana" color=purple> Book review! </font> </h2>
 <table>
 <style>
 table,th,td
@@ -15,14 +15,15 @@ border-collapse:collapse
   <thead>
   <tr>
     <th> Title </th>
-    <th> Author </th>
+    <th> Average Rating </th>
   </tr>
   </thead>
   <tbody>
 <% all_books.each do |book| %>
   <tr>
-    <td> <%= book["title"] %> </td>
-    <td> <%= book["author"] %> </td>
+    <% name = book["title"] %>
+    <td><%= link_to name, "/directors/#{book["id"]}" %> </td>
+    <td> <%= Review.where("title" => name).average("rating") %> </td>
   </tr>
 <% end %>
 </tbody>
