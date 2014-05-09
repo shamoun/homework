@@ -1,0 +1,17 @@
+<% the_id = params["id"] %>
+<% the_book = Book.read(the_id) %>
+<% reviews = Review.where("title" => the_book["title"]) %>
+<% avgrating = Review.where("title" => the_book["title"]).average("rating") %>
+
+<h1><%= the_book["title"] %></h1>
+
+<ul>
+
+    <li>
+      <%= list["price"] %>
+      <%= avgrating %>
+    </li>
+
+  <% end %>
+
+</ul>
