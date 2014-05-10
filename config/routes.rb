@@ -6,4 +6,6 @@ Homework::Application.routes.draw do
 
   get '/books/:id' => 'books/show'
 
+  get "/" => "books/home"
+
 end

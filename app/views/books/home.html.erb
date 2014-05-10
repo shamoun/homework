@@ -1,0 +1,8 @@
+<h1>Editor's choice!</h1>
+
+<% all_reviews = Review.where("title" => the_book["title"]) %>
+<% all_reviews.each do |book| %>
+<% editor = Review.maxium("rating") %>
+<% pick = editor["title"] >%
+
+<h2>Editors choice:</h2>
