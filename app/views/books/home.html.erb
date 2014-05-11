@@ -3,6 +3,11 @@
 
 <% editors_pick = Review.group("title").order("avg(rating) desc").first[:title] %>
 
+
 <strong>The Editor's Pick is: </strong><%= link_to editors_pick, "/books/#{Book.find_by("title" => editors_pick)[:id]}"  %>
+
+<br>
+<br>
+<%= link_to "See full list of books", "/books" %> </td>
 
 </font>

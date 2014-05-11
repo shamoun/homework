@@ -1,3 +1,4 @@
+<font face="verdana">
 <% the_id = params["id"] %>
 <% the_book = Book.read(the_id) %>
 <% reviews = Review.where("title" => the_book["title"]) %>
@@ -36,9 +37,16 @@ border-collapse:collapse
   <tbody>
 <% all_reviews.each do |feedback| %>
   <tr>
+
     <td> <%= feedback ["id"] %> </td>
     <td> <%= feedback ["feedback"] %> </td>
   </tr>
 <% end %>
 </tbody>
 </table>
+</style>
+
+<br>
+
+<%= link_to "Go back to main list", "/books" %> </td>
+</font>
