@@ -1,8 +1,8 @@
-<h1>Editor's choice!</h1>
+<font face="verdana">
 
-<% all_reviews = Review.where("title" => the_book["title"]) %>
-<% all_reviews.each do |book| %>
-<% editor = Review.maxium("rating") %>
-<% pick = editor["title"] >%
 
-<h2>Editors choice:</h2>
+<% editors_pick = Review.group("title").order("avg(rating) desc").first[:title] %>
+
+<strong>The Editor's Pick is: </strong><%= link_to editors_pick, "/books/#{Book.find_by("title" => editors_pick)[:id]}"  %>
+
+</font>
