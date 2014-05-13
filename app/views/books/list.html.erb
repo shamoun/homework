@@ -10,7 +10,7 @@ border-collapse:collapse
 </style>
 <table style="width:600px">
 
-<% all_books = Book.read %>
+<% all_books = Book.read.order("title asc") %>
 
   <thead>
   <tr>
@@ -24,7 +24,8 @@ border-collapse:collapse
     <% name = book["title"] %>
     <% avgrating = Review.where("title" => name).average("rating") %>
     <td><%= link_to name, "/books/#{book["id"]}" %> </td>
-    <td><%= avgrating %> </td>
+    <td><%= avgrating.round %> </td>
+
   </tr>
 <% end %>
 </tbody>
