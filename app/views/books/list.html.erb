@@ -20,11 +20,13 @@ border-collapse:collapse
   </thead>
   <tbody>
 <% all_books.each do |book| %>
+
+
   <tr>
     <% name = book["title"] %>
     <% avgrating = Review.where("title" => name).average("rating") %>
     <td><%= link_to name, "/books/#{book["id"]}" %> </td>
-    <td><%= avgrating.round %> </td>
+    <td><%= avgrating %> </td>
 
   </tr>
 <% end %>
